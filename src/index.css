@@ -1,0 +1,68 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+*::-webkit-scrollbar-thumb {
+  background: #dfe3fa;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+#edit[open] {
+  transition: 500ms all;
+  animation: slide-up forwards 500ms;
+}
+#edit {
+  transition: 500ms all;
+}
+
+
+#edit::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+#edit::-webkit-scrollbar-thumb {
+  background: #dfe3fa;
+  border-radius: 5px;
+}
+
+/* Define the button style when being hovered over */
+
+#delete[open] {
+  animation: fade-in forwards 500ms;
+}
+#delete {
+  background-color: transparent;
+}
+#delete::backdrop {
+  background-color: black;
+  opacity: 0.5;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
