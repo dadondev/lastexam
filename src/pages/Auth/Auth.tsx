@@ -23,7 +23,7 @@ const Auth = () => {
         createUserWithEmailAndPassword(auth, data.email, data.password).then(
           (credential) => {
             if (credential.user) {
-              console.log(credential.user);
+              navigate("/");
             }
           }
         );
@@ -38,8 +38,12 @@ const Auth = () => {
 
   const authGoogle = () => {
     signInWithPopup(auth, GoogleProvider)
-      .then(() => {
-        navigate("/");
+      .then((userCredintal) => {
+        if (userCredintal.user) {
+          navigate("/");
+        } else {
+          toast.error("Authentication is not successfully !");
+        }
       })
       .catch(() => {
         toast.error("Authenfication is not successfully !");
@@ -50,7 +54,7 @@ const Auth = () => {
       <Toaster position="top-right" richColors />
       <div className="pt-10 max-w-[400px] w-full px-6">
         <h1 className=" dark:text-white text-3xl text-center text-black font-semibold mb-5">
-          Authenfication
+          Authentication
         </h1>
         <form
           className="flex flex-col gap-4 min-w-full "
@@ -110,6 +114,7 @@ const Auth = () => {
           <Label>or</Label>
         </span>
         <button
+          type="button"
           onClick={() => authGoogle()}
           className="py-2 px-5 flex items-center bg-white text-purpleLight font-bold mx-auto mt-2 rounded-md dark:bg-[transparent] border-[2px] dark:border-purple border-purpleLight dark:text-white active:scale-90 transition-all"
         >
