@@ -10,6 +10,19 @@ const ToSection = ({
   date?: string;
 }) => {
   useEffect(() => {}, []);
+  const getDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+
+    let month: number | string = date.getMonth() + 1;
+    let day: number | string = date.getDate();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    const today = `${year}-${month}-${day}`;
+    return today;
+  };
 
   return (
     <div className="grid gap-6 max-w-full mb-10">
@@ -46,7 +59,7 @@ const ToSection = ({
           <Label>Invoice date</Label>
           <input
             type="date"
-            value={date}
+            value={date ? date : getDate()}
             disabled
             className="border bg-transparent border-lightGray dark:border-lightBlue rounded-lg py-[18px] px-5 block focus:border-purpleLight outline-none dark:bg-darkBlue dark:text-white  w-full"
           />
