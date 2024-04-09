@@ -8,7 +8,6 @@ const Header = () => {
       </a>
       <article className="flex items-center gap-6 transition-all lg:flex-col md:gap-8">
         <ModeController />
-
         <article className="p-5 border-l border-border md:p-6 transition-all lg:border-l-0 lg:border-t lg:border-border">
           <img src="/default-avatar.png" alt="avatar" />
         </article>

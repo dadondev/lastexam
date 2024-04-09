@@ -11,10 +11,10 @@ const FilterInVoices = ({
 }) => {
   const { showModal } = useContext(ShowNewInVoice);
   return (
-    <div className="flex items-center gap-10 md:gap-12">
+    <div className="flex items-center gap-2 sm:gap-10 transition-all  shm:gap-5 md:gap-12">
       <Filter filter={filter} setFilter={setFilter} />
       <div
-        className="flex cursor-pointer transition-all p-[6px] pr-3 gap-2 items-center bg-purple rounded-[50px]"
+        className="flex cursor-pointer transition-all p-[6px] pr-3 gap-2 items-center bg-purple rounded-[50px] lg:hover:opacity-85"
         onClick={showModal}
         data-ripple-light="true"
         data-dialog-target="dialog"

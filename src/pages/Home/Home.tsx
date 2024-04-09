@@ -45,7 +45,7 @@ const Home = () => {
         className="min-h-full w-full"
       >
         {!loading ? (
-          <main className="w-ful pt-8 lg:px-0 px-6 lg:max-w-[730px] lg:mx-auto  flex lg:py-16 flex-col items-center lg:max-h-dvh md:pt-14">
+          <main className="w-ful pt-8 lg:px-0 px-6 overflow-x-hidden lg:max-w-[730px] lg:mx-auto  flex lg:py-16 flex-col items-center lg:max-h-dvh md:pt-14">
             <InVoicesController
               filter={filter}
               setFilter={setFilter}

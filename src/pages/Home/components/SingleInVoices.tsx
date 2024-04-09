@@ -66,7 +66,7 @@ const SingleInVoices = ({
   return (
     <div
       onClick={handleClick}
-      className="w-full max-w-[327px] md:gap-0 md:flex md:justify-between md:items-center  grid grid-cols-[auto_auto] dark:bg-darkBlue items-center md:grid-rows-1 rounded-xl gap-6 bg-white p-6 shadow-[rgba(72,84,159,0.1)] md:max-w-[750px] grid-rows-2  justify-between transition-all"
+      className="w-full active:scale-90 max-w-[327px] z-10 animate-fade-in lg:hover:scale-95 lg:cursor-pointer md:gap-0 md:flex md:justify-between md:items-center grid grid-cols-[auto_auto] dark:bg-darkBlue items-center md:grid-rows-1 rounded-xl gap-6 bg-white p-6 shadow-[rgba(72,84,159,0.1)] md:max-w-[750px] grid-rows-2  justify-between transition-all"
     >
       <span className="font-bold transition-all dark:text-blue">
         #<span className="dark:text-white ">{id}</span>

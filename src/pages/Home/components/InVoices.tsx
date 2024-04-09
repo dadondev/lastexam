@@ -23,7 +23,7 @@ const InVoices = ({
   return (
     <div
       className={
-        "h-auto md:px-0 px-6 md:pt-14 pt-8 w-full flex flex-wrap justify-center gap-4 items-center " +
+        "h-auto sxm:px-0 md:px-0 px-6 md:pt-14 pt-8 w-full flex flex-wrap justify-center gap-4 items-center " +
         (datas?.length === 0 ? "items-center" : "")
       }
     >
