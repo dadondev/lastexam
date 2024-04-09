@@ -42,7 +42,7 @@ const Auth = () => {
         navigate("/");
         console.log(userCredintal.user);
       }
-    });
+    }).catch(()=>toast.error("Authentication is not successfully"))
   };
   return (
     <main className="min-h-[calc(100dvh-80px)] w-full flex justify-center overflow-hidden">
