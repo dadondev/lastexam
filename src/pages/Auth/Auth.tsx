@@ -37,19 +37,12 @@ const Auth = () => {
   }, []);
 
   const authGoogle = () => {
-    signInWithPopup(auth, GoogleProvider)
-      .then((userCredintal) => {
-        if (userCredintal.user) {
-          navigate("/");
-        } else {
-          toast.error("Authentication is not successfully !");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-
-        toast.error("Authenfication is not successfully !");
-      });
+    signInWithPopup(auth, GoogleProvider).then((userCredintal) => {
+      if (userCredintal.user) {
+        navigate("/");
+        console.log(userCredintal.user);
+      }
+    });
   };
   return (
     <main className="min-h-[calc(100dvh-80px)] w-full flex justify-center overflow-hidden">
