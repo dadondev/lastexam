@@ -6,14 +6,14 @@ import Content from "./components/Content";
 import Header from "./components/Header";
 import { useNavigate, useParams } from "react-router-dom";
 import { onValue, ref, update } from "firebase/database";
-import { realDB } from "../../firebase/firebase";
+import { auth, realDB } from "../../firebase/firebase";
 import { createPortal } from "react-dom";
 import EditModal from "../../general/components/EditModal";
 import { toast } from "sonner";
 
 const SingleInVoice = () => {
   const { show, showModal, closeModal } = useContext(ShowModal);
-  const [data, setData] = useState<object>({});
+  const [data, setData] = useState<object | any>({});
   const [loding, setLoading] = useState(true);
   const navigte = useNavigate();
   const srcParams = useParams();
@@ -22,6 +22,7 @@ const SingleInVoice = () => {
       if (snap.exists()) {
         setLoading(false);
         setData(snap.val());
+        console.log(snap.val(), auth.currentUser);
       } else {
         navigte("/");
       }
@@ -57,13 +58,17 @@ const SingleInVoice = () => {
             showModal();
           }}
         />
-        <Button
-          type="delete"
-          onClick={() => {
-            const e: any | null = document.getElementById("delete");
-            if (e) e.showModal();
-          }}
-        />
+        {data.author === auth.currentUser ? (
+          <Button
+            type="delete"
+            onClick={() => {
+              const e: any | null = document.getElementById("delete");
+              if (e) e.showModal();
+            }}
+          />
+        ) : (
+          ""
+        )}
         <Button
           type="mark"
           className="sxm:text-[9px] shm:text-[13px]"

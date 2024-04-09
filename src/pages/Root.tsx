@@ -44,7 +44,7 @@ const Root = () => {
     >
       <div className="h-full w-full overflow-x-hidden">
         <Header />
-        <div className="transition-all lg:min-h-full bg-lightBG dark:bg-dark max-h-[calc(100dvh-80px)] h-full overflow-auto">
+        <div className="transition-all lg:min-h-full bg-lightBG dark:bg-dark max-h-[calc(100dvh-80px)] h-full sxm:overflow-auto">
           <RouterProvider router={router} />
         </div>
       </div>

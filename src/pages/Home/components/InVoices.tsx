@@ -18,7 +18,6 @@ const InVoices = ({
 
     return lastValue;
   };
-  console.log(datas);
 
   return (
     <div

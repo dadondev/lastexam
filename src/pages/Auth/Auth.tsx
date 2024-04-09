@@ -37,12 +37,14 @@ const Auth = () => {
   }, []);
 
   const authGoogle = () => {
-    signInWithPopup(auth, GoogleProvider).then((userCredintal) => {
-      if (userCredintal.user) {
-        navigate("/");
-        console.log(userCredintal.user);
-      }
-    }).catch(()=>toast.error("Authentication is not successfully"))
+    signInWithPopup(auth, GoogleProvider)
+      .then((userCredintal) => {
+        if (userCredintal.user) {
+          navigate("/");
+          console.log(userCredintal.user);
+        }
+      })
+      .catch(() => toast.error("Authentication is not successfully"));
   };
   return (
     <main className="min-h-[calc(100dvh-80px)] w-full flex justify-center overflow-hidden">

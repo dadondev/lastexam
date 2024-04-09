@@ -42,10 +42,10 @@ const Home = () => {
         onClick={() => {
           if (show) closeModal();
         }}
-        className="min-h-full w-full"
+        className="min-h-full w-full md:overflow-y-auto"
       >
         {!loading ? (
-          <main className="w-ful pt-8 lg:px-0 px-6 overflow-x-hidden lg:max-w-[730px] lg:mx-auto  flex lg:py-16 flex-col items-center lg:max-h-dvh md:pt-14">
+          <main className="w-full h-full pt-8 lg:px-0 px-6 overflow-x-hidden lg:max-w-[730px] lg:mx-auto  flex lg:py-16 flex-col items-center lg:max-h-dvh md:pt-14 sxm:overflow-y-auto md:overflow-visible">
             <InVoicesController
               filter={filter}
               setFilter={setFilter}
