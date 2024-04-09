@@ -45,7 +45,9 @@ const Auth = () => {
           toast.error("Authentication is not successfully !");
         }
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error);
+
         toast.error("Authenfication is not successfully !");
       });
   };
